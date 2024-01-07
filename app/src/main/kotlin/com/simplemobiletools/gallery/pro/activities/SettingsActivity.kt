@@ -60,10 +60,6 @@ class SettingsActivity : SimpleActivity() {
         setupManageHiddenFolders()
         setupSearchAllFiles()
         setupShowHiddenItems()
-        setupAutoplayVideos()
-        setupRememberLastVideo()
-        setupLoopVideos()
-        setupOpenVideosOnSeparateScreen()
         setupMaxBrightness()
         setupCropThumbnails()
         setupAnimateGifs()
@@ -77,7 +73,6 @@ class SettingsActivity : SimpleActivity() {
         setupFileDeletionPasswordProtection()
         setupDeleteEmptyFolders()
         setupAllowPhotoGestures()
-        setupAllowVideoGestures()
         setupAllowDownGesture()
         setupAllowRotatingWithGestures()
         setupShowNotch()
@@ -109,7 +104,6 @@ class SettingsActivity : SimpleActivity() {
         arrayOf(
             binding.settingsColorCustomizationSectionLabel,
             binding.settingsGeneralSettingsLabel,
-            binding.settingsVideosLabel,
             binding.settingsThumbnailsLabel,
             binding.settingsScrollingLabel,
             binding.settingsFullscreenMediaLabel,
@@ -263,37 +257,7 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupAutoplayVideos() {
-        binding.settingsAutoplayVideos.isChecked = config.autoplayVideos
-        binding.settingsAutoplayVideosHolder.setOnClickListener {
-            binding.settingsAutoplayVideos.toggle()
-            config.autoplayVideos = binding.settingsAutoplayVideos.isChecked
-        }
-    }
 
-    private fun setupRememberLastVideo() {
-        binding.settingsRememberLastVideoPosition.isChecked = config.rememberLastVideoPosition
-        binding.settingsRememberLastVideoPositionHolder.setOnClickListener {
-            binding.settingsRememberLastVideoPosition.toggle()
-            config.rememberLastVideoPosition = binding.settingsRememberLastVideoPosition.isChecked
-        }
-    }
-
-    private fun setupLoopVideos() {
-        binding.settingsLoopVideos.isChecked = config.loopVideos
-        binding.settingsLoopVideosHolder.setOnClickListener {
-            binding.settingsLoopVideos.toggle()
-            config.loopVideos = binding.settingsLoopVideos.isChecked
-        }
-    }
-
-    private fun setupOpenVideosOnSeparateScreen() {
-        binding.settingsOpenVideosOnSeparateScreen.isChecked = config.openVideosOnSeparateScreen
-        binding.settingsOpenVideosOnSeparateScreenHolder.setOnClickListener {
-            binding.settingsOpenVideosOnSeparateScreen.toggle()
-            config.openVideosOnSeparateScreen = binding.settingsOpenVideosOnSeparateScreen.isChecked
-        }
-    }
 
     private fun setupMaxBrightness() {
         binding.settingsMaxBrightness.isChecked = config.maxBrightness
@@ -454,13 +418,6 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupAllowVideoGestures() {
-        binding.settingsAllowVideoGestures.isChecked = config.allowVideoGestures
-        binding.settingsAllowVideoGesturesHolder.setOnClickListener {
-            binding.settingsAllowVideoGestures.toggle()
-            config.allowVideoGestures = binding.settingsAllowVideoGestures.isChecked
-        }
-    }
 
     private fun setupAllowDownGesture() {
         binding.settingsAllowDownGesture.isChecked = config.allowDownGesture

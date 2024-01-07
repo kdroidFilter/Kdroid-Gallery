@@ -89,18 +89,8 @@
         android:title="@string/column_count"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/slideshow"
-        android:showAsAction="never"
-        android:title="@string/slideshow"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_settings_cog_vector"
         android:title="@string/settings"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/about"
-        android:icon="@drawable/ic_info_vector"
-        android:title="@string/about"
         app:showAsAction="ifRoom" />
 </menu>

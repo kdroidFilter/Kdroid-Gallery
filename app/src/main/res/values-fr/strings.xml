@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Galerie simple</string>
+    <string name="app_name">Galerie Kdroid</string>
     <string name="app_launcher_name">Galerie</string>
     <string name="edit">Modifier</string>
     <string name="open_camera">Ouvrir l\'appareil photo</string>

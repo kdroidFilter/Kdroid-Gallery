@@ -89,11 +89,16 @@ class SearchActivity : SimpleActivity(), MediaOperationsListener {
         binding.searchMenu.updateColors()
     }
 
+    private val videoExtensions = setOf(".mp4", ".avi", ".mov", ".wmv", ".flv", ".mkv")
     private fun textChanged(text: String) {
         ensureBackgroundThread {
             try {
-                val filtered = mAllMedia.filter { it is Medium && it.name.contains(text, true) } as ArrayList
-                filtered.sortBy { it is Medium && !it.name.startsWith(text, true) }
+                val filtered = mAllMedia.filter {
+                    it is Medium &&
+                        it.name.contains(text, true) &&
+                        videoExtensions.none { ext -> it.name.endsWith(ext, ignoreCase = true) }
+                } as ArrayList<ThumbnailItem>
+                // The rest of your filtering and sorting logic
                 val grouped = MediaFetcher(applicationContext).groupMedia(filtered as ArrayList<Medium>, "")
                 runOnUiThread {
                     if (grouped.isEmpty()) {

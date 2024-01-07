@@ -15,7 +15,6 @@ class FilterMediaDialog(val activity: BaseSimpleActivity, val callback: (result:
         val filterMedia = activity.config.filterMedia
         binding.apply {
             filterMediaImages.isChecked = filterMedia and TYPE_IMAGES != 0
-            filterMediaVideos.isChecked = filterMedia and TYPE_VIDEOS != 0
             filterMediaGifs.isChecked = filterMedia and TYPE_GIFS != 0
             filterMediaRaws.isChecked = filterMedia and TYPE_RAWS != 0
             filterMediaSvgs.isChecked = filterMedia and TYPE_SVGS != 0
@@ -34,8 +33,6 @@ class FilterMediaDialog(val activity: BaseSimpleActivity, val callback: (result:
         var result = 0
         if (binding.filterMediaImages.isChecked)
             result += TYPE_IMAGES
-        if (binding.filterMediaVideos.isChecked)
-            result += TYPE_VIDEOS
         if (binding.filterMediaGifs.isChecked)
             result += TYPE_GIFS
         if (binding.filterMediaRaws.isChecked)
